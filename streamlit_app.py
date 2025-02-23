@@ -37,7 +37,7 @@ elif st.session_state.page == 'page1':
     st.components.v1.html(
         """
         <iframe
-            src="https://30days.streamlit.app?embed=true"
+            src="https://page1cluster1.streamlit.app?embed=true"
             style="height: 450px; width: 100%;"
             frameborder="0">
         </iframe>
@@ -53,10 +53,11 @@ elif st.session_state.page == 'page1':
 # Page 2
 elif st.session_state.page == 'page2':
     st.title("Page 2")
+    
     st.components.v1.html(
         """
         <iframe
-            src="https://page1cluster1.streamlit.app?embed=true"
+            src="https://page2cluster2.streamlit.app?embed=true"
             style="height: 450px; width: 100%;"
             frameborder="0">
         </iframe>
@@ -64,6 +65,7 @@ elif st.session_state.page == 'page2':
         height=450,
         width=700,
     )
+
     # Button to go back to Home
     if st.button("Back to Home"):
         go_home()
