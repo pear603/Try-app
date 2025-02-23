@@ -5,6 +5,7 @@ st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
 )
 
+
 # Initialize session state for navigation
 if 'page' not in st.session_state:
     st.session_state.page = 'home'  # Start on the home page
@@ -52,12 +53,17 @@ elif st.session_state.page == 'page1':
 # Page 2
 elif st.session_state.page == 'page2':
     st.title("Page 2")
-    data2 = st.text_input("Enter data for Page 2:")
-    
-    if st.button("Submit"):
-        st.session_state.data2 = data2
-        st.success("Data submitted!")
-    
+    st.components.v1.html(
+        """
+        <iframe
+            src="https://page1cluster1.streamlit.app?embed=true"
+            style="height: 450px; width: 100%;"
+            frameborder="0">
+        </iframe>
+        """,
+        height=450,
+        width=700,
+    )
     # Button to go back to Home
     if st.button("Back to Home"):
         go_home()
